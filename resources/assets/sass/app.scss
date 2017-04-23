@@ -1,4 +1,4 @@
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 $navbar-color: #3c3e42;
 
@@ -64,6 +64,13 @@ p {
     &:hover {
         color: #fff;
     }
+}
+
+#logout {
+  cursor: default;
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 /* footer */
