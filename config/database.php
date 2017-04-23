@@ -1,5 +1,15 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Load DB configuration
+|--------------------------------------------------------------------------
+| This function defined in autoload.php
+|
+*/
+
+$db_config = get_db_config();
+
 return [
 
     /*
@@ -26,7 +36,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    //'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => $db_config['connection'],
 
     /*
     |--------------------------------------------------------------------------
@@ -66,10 +77,14 @@ return [
 
         'pgsql' => [
             'driver'   => 'pgsql',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            //'host'     => env('DB_HOST', 'localhost'),
+            //'database' => env('DB_DATABASE', 'forge'),
+            //'username' => env('DB_USERNAME', 'forge'),
+            //'password' => env('DB_PASSWORD', ''),
+            'host'     => $db_config['host'],
+            'database' => $db_config['database'],
+            'username' => $db_config['username'],
+            'password' => $db_config['password'],
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',

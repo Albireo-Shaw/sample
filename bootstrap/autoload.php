@@ -32,3 +32,15 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
+
+/*
+|--------------------------------------------------------------------------
+| 依据环境选择数据库
+|--------------------------------------------------------------------------
+|
+| If the enviroment is Heroku, use progresql configuration, ortherwise use
+| the local mysql configuration.
+|
+*/
+require __DIR__.'/helper.php';
